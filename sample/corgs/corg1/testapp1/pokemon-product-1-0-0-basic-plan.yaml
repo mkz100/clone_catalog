@@ -1,0 +1,22 @@
+type: subscription
+api_version: 2.0.0
+id: 4151606e-6034-48a3-bc56-b4ce3277c115
+name: pokemon-product-1-0-0-basic-plan
+title: Pokemon-Product 1.0.0 basic-plan
+state: enabled
+product_url: >-
+  https://mgmt.v10.apicww.cloud/api/catalogs/test2-cat/test2-cat/products/pokemon-product/1.0.0
+plan: basic-plan
+plan_title: basic plan
+task_urls: []
+created_at: '2022-01-20T02:40:39.000Z'
+updated_at: '2022-01-20T02:40:39.000Z'
+org_url: 'https://mgmt.v10.apicww.cloud/api/orgs/c6312872-9f34-4f18-b626-b5dbddde87aa'
+catalog_url: >-
+  https://mgmt.v10.apicww.cloud/api/catalogs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4
+consumer_org_url: >-
+  https://mgmt.v10.apicww.cloud/api/consumer-orgs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/a2880aba-db37-4ea2-b6f1-baa2f813dfde
+app_url: >-
+  https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/a2880aba-db37-4ea2-b6f1-baa2f813dfde/d029b425-3bcc-473b-a023-ca29adaa5f27
+url: >-
+  https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/a2880aba-db37-4ea2-b6f1-baa2f813dfde/d029b425-3bcc-473b-a023-ca29adaa5f27/subscriptions/4151606e-6034-48a3-bc56-b4ce3277c115

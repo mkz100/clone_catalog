@@ -1,0 +1,15 @@
+type: consumer_org
+api_version: 2.0.0
+id: 19536a4b-e255-449f-ac0d-5b36b426608e
+name: corg4
+title: cOrg4
+state: enabled
+owner_url: >-
+  https://mgmt.v10.apicww.cloud/api/user-registries/middleearth/test2-cat-catalog-0/users/mkz102
+created_at: '2022-01-18T18:12:14.000Z'
+updated_at: '2022-01-18T18:12:14.000Z'
+org_url: 'https://mgmt.v10.apicww.cloud/api/orgs/c6312872-9f34-4f18-b626-b5dbddde87aa'
+catalog_url: >-
+  https://mgmt.v10.apicww.cloud/api/catalogs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4
+url: >-
+  https://mgmt.v10.apicww.cloud/api/consumer-orgs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/19536a4b-e255-449f-ac0d-5b36b426608e

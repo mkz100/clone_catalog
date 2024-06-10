@@ -1,0 +1,7 @@
+type: consumer_org
+api_version: 2.0.0
+name: corg101
+title: cOrg101
+state: enabled
+owner_url: >-
+  https://cm.v10.apicww.cloud/api/user-registries/14e1d75f-7985-4588-a0f2-4cdbeaf796fe/64d0cff1-bf75-414c-9379-bada1e0aeab0/users/b40d9da4-e912-4841-add3-117a0bf544ec

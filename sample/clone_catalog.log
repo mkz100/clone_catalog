@@ -1,0 +1,198 @@
+==========================================================
+Login src and target API mgr
+==========================================================
+Warning: Using default toolkit credentials.
+Logged into mgmt.v10.apicww.cloud successfully
+Warning: Using default toolkit credentials.
+Logged into mgmt.v10.apicww.cloud successfully
+==========================================================
+clone all products and contained apis from src catalog
+==========================================================
+loopback:1.0.0           loopback_1.0.0.yaml              
+loopback-product:1.0.0   loopback-product_1.0.0.yaml      
+pokemon:1.0.0           pokemon_1.0.0.yaml              
+pokemon-product:1.0.0   pokemon-product_1.0.0.yaml      
+==========================================================
+Publish all products to target catalog / space
+==========================================================
+pokemon-product:1.0.0    [state: published]   https://mgmt.v10.apicww.cloud/api/spaces/c6312872-9f34-4f18-b626-b5dbddde87aa/474d119a-470a-48cb-8580-5033a8af22c7/0f14eda4-fe3c-4c6e-b29f-ff7c892c4368/products/b5691748-4a1d-406f-9b6f-f6033876bea1   
+loopback-product:1.0.0    [state: published]   https://mgmt.v10.apicww.cloud/api/spaces/c6312872-9f34-4f18-b626-b5dbddde87aa/474d119a-470a-48cb-8580-5033a8af22c7/0f14eda4-fe3c-4c6e-b29f-ff7c892c4368/products/cccd659b-0aa9-40bf-9473-f2bdcfc81fe1   
+==========================================================
+Get all local users from source LUR
+Remove identity_provider and append the default password to the user yaml
+Create all local users in target LUR
+==========================================================
+mkz105   mkz105.yaml   https://mgmt.v10.apicww.cloud/api/user-registries/c6312872-9f34-4f18-b626-b5dbddde87aa/cd6af9ce-83c4-4477-8d77-b093ba302493/users/6de9bd50-82f2-43d6-b4b7-33d5d71f9431   
+Error: The user with username mkz105 already exists in the test2-cat-idp identity provider.
+mkz104   mkz104.yaml   https://mgmt.v10.apicww.cloud/api/user-registries/c6312872-9f34-4f18-b626-b5dbddde87aa/cd6af9ce-83c4-4477-8d77-b093ba302493/users/67a06b31-8bc2-400b-9d29-3e6eb50a21eb   
+Error: The user with username mkz104 already exists in the test2-cat-idp identity provider.
+mkz102   mkz102.yaml   https://mgmt.v10.apicww.cloud/api/user-registries/c6312872-9f34-4f18-b626-b5dbddde87aa/cd6af9ce-83c4-4477-8d77-b093ba302493/users/0918f186-bfb5-4c65-869c-d2189ff947b0   
+Error: The user with username mkz102 already exists in the test2-cat-idp identity provider.
+mkz101   mkz101.yaml   https://mgmt.v10.apicww.cloud/api/user-registries/c6312872-9f34-4f18-b626-b5dbddde87aa/cd6af9ce-83c4-4477-8d77-b093ba302493/users/3435cfcc-2d2d-407e-9d4a-fd66c63f53d3   
+Error: The user with username mkz101 already exists in the test2-cat-idp identity provider.
+mkz100   mkz100.yaml   https://mgmt.v10.apicww.cloud/api/user-registries/c6312872-9f34-4f18-b626-b5dbddde87aa/cd6af9ce-83c4-4477-8d77-b093ba302493/users/37c6b46e-3420-4fe5-8a49-b72be7a990b3   
+Error: The user with username mkz100 already exists in the test2-cat-idp identity provider.
+=== apic catalog-settings:update env/catalog-setting-hash-true.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat
+catalog-setting   https://mgmt.v10.apicww.cloud/api/catalogs/c6312872-9f34-4f18-b626-b5dbddde87aa/474d119a-470a-48cb-8580-5033a8af22c7/settings   
+==========================================================
+create corg corg102 in the target catalog test2-cat
+==========================================================
+=== apic consumer-orgs:get corg102 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat
+corg102   corg102.yaml   https://mgmt.v10.apicww.cloud/api/consumer-orgs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/224ce4f4-d131-4aff-8411-7742f47c2923   
+=== owner id / name: 37c6b46e-3420-4fe5-8a49-b72be7a990b3 / mkz100
+=== apic consumer-orgs:create corg102.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat
+Error: The Consumer Org cannot be created with name 'corg102'. Another resource of type consumer_org (id: c123a07c-279f-40b9-9480-cdfeb11fb85d) already exists with the same name.
+=== apic apps:list -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg102 --space test-space1 --space-initiated
+==========================================================
+create app testapp5 in the target cOrg corg102
+==========================================================
+=== apic apps:get testapp5 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg102 --space test-space1 --space-initiated
+testapp5   testapp5.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/7e71442e-c016-44b7-bf73-a0e1a4646f54/224ce4f4-d131-4aff-8411-7742f47c2923/9299b9fb-c5e5-4361-9c8f-f9266e6870b5   
+=== apic apps:create testapp5.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg102 --space test2-cat --space-initiated
+Error: The App cannot be created with name 'testapp5'. Another resource of type app (id: 1fbfe19d-3763-4bf4-89e6-e3d047cb1fe5) already exists with the same name.
+=== apic credentials:get credential-for-testapp5-2 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg102 -a testapp5
+credential-for-testapp5-2   credential-for-testapp5-2.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/224ce4f4-d131-4aff-8411-7742f47c2923/9299b9fb-c5e5-4361-9c8f-f9266e6870b5/credentials/2da62be0-4d8c-4c1f-b372-3b0f616e3074   
+=== apic credentials:update credential-for-testapp5 credential-for-testapp5-2.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg102 -a testapp5
+Error: The client_id f029780dbad81bac73ff4cd4fe889494 already exists in catalog.
+=== apic credentials:get credential-for-testapp5-1 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg102 -a testapp5
+credential-for-testapp5-1   credential-for-testapp5-1.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/224ce4f4-d131-4aff-8411-7742f47c2923/9299b9fb-c5e5-4361-9c8f-f9266e6870b5/credentials/25b928d4-72c1-4369-8bd8-8d5382ac7288   
+=== apic credentials:create credential-for-testapp5-1.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg102 -a testapp5
+Error: The client_id 8b2bfd03afd23a2d212d3a440865a12e already exists in catalog.
+=== apic credentials:get credential-for-testapp5-0 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg102 -a testapp5
+credential-for-testapp5-0   credential-for-testapp5-0.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/224ce4f4-d131-4aff-8411-7742f47c2923/9299b9fb-c5e5-4361-9c8f-f9266e6870b5/credentials/e2f329ac-01e7-430c-ad76-83604718cc38   
+=== apic credentials:create credential-for-testapp5-0.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg102 -a testapp5
+Error: The client_id 926ce40631117ada2b211b53c305621f already exists in catalog.
+=== apic credentials:get credential-for-testapp5 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg102 -a testapp5
+credential-for-testapp5   credential-for-testapp5.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/224ce4f4-d131-4aff-8411-7742f47c2923/9299b9fb-c5e5-4361-9c8f-f9266e6870b5/credentials/11c917dd-f58d-471a-9a0f-8e271e1a61ac   
+=== apic credentials:create credential-for-testapp5.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg102 -a testapp5
+Error: The client_id 87b1fc6fc36eced4eb85a8c335127ccb already exists in catalog.
+==========================================================
+create the subscriptions for app testapp5 in target catalog
+==========================================================
+=== apic subscriptions:list -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg102 -a testapp5
+=== apic subscriptions:get echo-product-1-0-0-default -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg102 -a testapp5
+echo-product-1-0-0-default   echo-product-1-0-0-default.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/224ce4f4-d131-4aff-8411-7742f47c2923/9299b9fb-c5e5-4361-9c8f-f9266e6870b5/subscriptions/ec31bb62-34de-421b-b74d-b9708520f11b   
+=== echo-product-1-0-0-default subcribes to a product that is not found in the space test-space1
+==========================================================
+create app testapp4 in the target cOrg corg102
+==========================================================
+=== apic apps:get testapp4 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg102 --space test-space1 --space-initiated
+testapp4   testapp4.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/7e71442e-c016-44b7-bf73-a0e1a4646f54/224ce4f4-d131-4aff-8411-7742f47c2923/ed74dd5b-8cc9-4cbf-b12e-854230b4a7bf   
+=== apic apps:create testapp4.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg102 --space test2-cat --space-initiated
+Error: The App cannot be created with name 'testapp4'. Another resource of type app (id: 5eb0ad83-5377-4533-9072-99e53220f0b9) already exists with the same name.
+=== apic credentials:get credential-for-testapp4 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg102 -a testapp4
+credential-for-testapp4   credential-for-testapp4.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/224ce4f4-d131-4aff-8411-7742f47c2923/ed74dd5b-8cc9-4cbf-b12e-854230b4a7bf/credentials/70e4c2cd-130b-4a21-9381-fcac9d942cfe   
+=== apic credentials:update credential-for-testapp4 credential-for-testapp4.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg102 -a testapp4
+credential-for-testapp4   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/474d119a-470a-48cb-8580-5033a8af22c7/c123a07c-279f-40b9-9480-cdfeb11fb85d/5eb0ad83-5377-4533-9072-99e53220f0b9/credentials/c641bd59-87fa-46d4-ae05-49bcc0e20430   
+==========================================================
+create the subscriptions for app testapp4 in target catalog
+==========================================================
+=== apic subscriptions:list -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg102 -a testapp4
+==========================================================
+create corg corg4 in the target catalog test2-cat
+==========================================================
+=== apic consumer-orgs:get corg4 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat
+corg4   corg4.yaml   https://mgmt.v10.apicww.cloud/api/consumer-orgs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/19536a4b-e255-449f-ac0d-5b36b426608e   
+=== owner id / name: 0918f186-bfb5-4c65-869c-d2189ff947b0 / mkz102
+=== apic consumer-orgs:create corg4.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat
+Error: The Consumer Org cannot be created with name 'corg4'. Another resource of type consumer_org (id: 7de99a50-c5b7-4cbf-a3af-135a057048f9) already exists with the same name.
+=== apic apps:list -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg4 --space test-space1 --space-initiated
+==========================================================
+create corg corg3 in the target catalog test2-cat
+==========================================================
+=== apic consumer-orgs:get corg3 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat
+corg3   corg3.yaml   https://mgmt.v10.apicww.cloud/api/consumer-orgs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/89209daa-7fa2-4696-800e-1d3bfea52bf8   
+=== owner id / name: 3435cfcc-2d2d-407e-9d4a-fd66c63f53d3 / mkz101
+=== apic consumer-orgs:create corg3.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat
+Error: The Consumer Org cannot be created with name 'corg3'. Another resource of type consumer_org (id: 084218f1-bf97-451b-8a9a-e6a50bdb367f) already exists with the same name.
+=== apic apps:list -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg3 --space test-space1 --space-initiated
+==========================================================
+create corg corg2 in the target catalog test2-cat
+==========================================================
+=== apic consumer-orgs:get corg2 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat
+corg2   corg2.yaml   https://mgmt.v10.apicww.cloud/api/consumer-orgs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/06f221f1-17ad-4b33-b545-54f69e2c064e   
+=== owner id / name: 37c6b46e-3420-4fe5-8a49-b72be7a990b3 / mkz100
+=== apic consumer-orgs:create corg2.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat
+Error: The Consumer Org cannot be created with name 'corg2'. Another resource of type consumer_org (id: 9b14f1f6-eb90-4499-bcff-68ad03e3d476) already exists with the same name.
+=== apic apps:list -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg2 --space test-space1 --space-initiated
+==========================================================
+create app testapp3 in the target cOrg corg2
+==========================================================
+=== apic apps:get testapp3 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg2 --space test-space1 --space-initiated
+testapp3   testapp3.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/7e71442e-c016-44b7-bf73-a0e1a4646f54/06f221f1-17ad-4b33-b545-54f69e2c064e/002f2c13-f10e-4227-88fb-56115f811704   
+=== apic apps:create testapp3.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg2 --space test2-cat --space-initiated
+Error: The App cannot be created with name 'testapp3'. Another resource of type app (id: c6b784de-2b5c-40cc-945a-fb0c27816303) already exists with the same name.
+=== apic credentials:get credential-for-testapp3 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg2 -a testapp3
+credential-for-testapp3   credential-for-testapp3.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/06f221f1-17ad-4b33-b545-54f69e2c064e/002f2c13-f10e-4227-88fb-56115f811704/credentials/3e02003e-4446-4388-bb5c-9d6f8084f741   
+=== apic credentials:update credential-for-testapp3 credential-for-testapp3.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg2 -a testapp3
+credential-for-testapp3   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/474d119a-470a-48cb-8580-5033a8af22c7/9b14f1f6-eb90-4499-bcff-68ad03e3d476/c6b784de-2b5c-40cc-945a-fb0c27816303/credentials/7a3b6c9d-ac7e-44b2-a6d2-b341b92859a8   
+==========================================================
+create the subscriptions for app testapp3 in target catalog
+==========================================================
+=== apic subscriptions:list -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg2 -a testapp3
+=== apic subscriptions:get pokemon-product-1-0-0-basic-plan -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg2 -a testapp3
+pokemon-product-1-0-0-basic-plan   pokemon-product-1-0-0-basic-plan.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/06f221f1-17ad-4b33-b545-54f69e2c064e/002f2c13-f10e-4227-88fb-56115f811704/subscriptions/d8811b57-bd17-4ea8-83f9-f0833e1c08a4   
+=== target product url for sub pokemon-product-1-0-0-basic-plan = https://mgmt.v10.apicww.cloud/api/catalogs/test2-cat/test2-cat/products/pokemon-product/1.0.0
+=== apic subscriptions:create pokemon-product-1-0-0-basic-plan.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg2 -a testapp3
+pokemon-product-1-0-0-basic-plan    [state: enabled]   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/474d119a-470a-48cb-8580-5033a8af22c7/9b14f1f6-eb90-4499-bcff-68ad03e3d476/c6b784de-2b5c-40cc-945a-fb0c27816303/subscriptions/2dc48709-56fc-4a04-a76a-e4a670434990   
+=== apic subscriptions:get loopback-product-1-0-0-default -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg2 -a testapp3
+loopback-product-1-0-0-default   loopback-product-1-0-0-default.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/06f221f1-17ad-4b33-b545-54f69e2c064e/002f2c13-f10e-4227-88fb-56115f811704/subscriptions/393cc6e6-996b-40b1-8721-beb5a1fda6c4   
+=== target product url for sub loopback-product-1-0-0-default = https://mgmt.v10.apicww.cloud/api/catalogs/test2-cat/test2-cat/products/loopback-product/1.0.0
+=== apic subscriptions:create loopback-product-1-0-0-default.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg2 -a testapp3
+loopback-product-1-0-0-default    [state: enabled]   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/474d119a-470a-48cb-8580-5033a8af22c7/9b14f1f6-eb90-4499-bcff-68ad03e3d476/c6b784de-2b5c-40cc-945a-fb0c27816303/subscriptions/9836c5f0-bec6-4432-843a-3dcd566be7a8   
+==========================================================
+create corg corg1 in the target catalog test2-cat
+==========================================================
+=== apic consumer-orgs:get corg1 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat
+corg1   corg1.yaml   https://mgmt.v10.apicww.cloud/api/consumer-orgs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/a2880aba-db37-4ea2-b6f1-baa2f813dfde   
+=== owner id / name: 37c6b46e-3420-4fe5-8a49-b72be7a990b3 / mkz100
+=== apic consumer-orgs:create corg1.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat
+Error: The Consumer Org cannot be created with name 'corg1'. Another resource of type consumer_org (id: 0e89b958-eb99-4c8d-80dc-1e38cc78613b) already exists with the same name.
+=== apic apps:list -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg1 --space test-space1 --space-initiated
+==========================================================
+create app testapp2 in the target cOrg corg1
+==========================================================
+=== apic apps:get testapp2 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg1 --space test-space1 --space-initiated
+testapp2   testapp2.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/7e71442e-c016-44b7-bf73-a0e1a4646f54/a2880aba-db37-4ea2-b6f1-baa2f813dfde/87278595-bf4a-4672-aa0a-39101c6a09ac   
+=== apic apps:create testapp2.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg1 --space test2-cat --space-initiated
+Error: The App cannot be created with name 'testapp2'. Another resource of type app (id: 589cb230-55cb-4649-b83d-0c89983911d7) already exists with the same name.
+=== apic credentials:get credential-for-testapp2 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg1 -a testapp2
+credential-for-testapp2   credential-for-testapp2.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/a2880aba-db37-4ea2-b6f1-baa2f813dfde/87278595-bf4a-4672-aa0a-39101c6a09ac/credentials/8232dff3-7895-47e9-9515-80acfb588ba8   
+=== apic credentials:update credential-for-testapp2 credential-for-testapp2.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg1 -a testapp2
+credential-for-testapp2   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/474d119a-470a-48cb-8580-5033a8af22c7/0e89b958-eb99-4c8d-80dc-1e38cc78613b/589cb230-55cb-4649-b83d-0c89983911d7/credentials/8ccc3c78-9d09-4d9d-af0b-91f98f5272eb   
+==========================================================
+create the subscriptions for app testapp2 in target catalog
+==========================================================
+=== apic subscriptions:list -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg1 -a testapp2
+=== apic subscriptions:get pokemon-product-1-0-0-basic-plan -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg1 -a testapp2
+pokemon-product-1-0-0-basic-plan   pokemon-product-1-0-0-basic-plan.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/a2880aba-db37-4ea2-b6f1-baa2f813dfde/87278595-bf4a-4672-aa0a-39101c6a09ac/subscriptions/fa6e9d93-025b-4521-a8c9-aca0abe74a31   
+=== target product url for sub pokemon-product-1-0-0-basic-plan = https://mgmt.v10.apicww.cloud/api/catalogs/test2-cat/test2-cat/products/pokemon-product/1.0.0
+=== apic subscriptions:create pokemon-product-1-0-0-basic-plan.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg1 -a testapp2
+pokemon-product-1-0-0-basic-plan    [state: enabled]   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/474d119a-470a-48cb-8580-5033a8af22c7/0e89b958-eb99-4c8d-80dc-1e38cc78613b/589cb230-55cb-4649-b83d-0c89983911d7/subscriptions/496c5766-9a86-4f85-b062-73ba95f79bcf   
+==========================================================
+create app testapp1 in the target cOrg corg1
+==========================================================
+=== apic apps:get testapp1 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg1 --space test-space1 --space-initiated
+testapp1   testapp1.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/7e71442e-c016-44b7-bf73-a0e1a4646f54/a2880aba-db37-4ea2-b6f1-baa2f813dfde/d029b425-3bcc-473b-a023-ca29adaa5f27   
+=== apic apps:create testapp1.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg1 --space test2-cat --space-initiated
+Error: The App cannot be created with name 'testapp1'. Another resource of type app (id: 7987ad21-d535-4d96-b210-52f9951f9d9c) already exists with the same name.
+=== apic credentials:get credential-for-testapp1 -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg1 -a testapp1
+credential-for-testapp1   credential-for-testapp1.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/a2880aba-db37-4ea2-b6f1-baa2f813dfde/d029b425-3bcc-473b-a023-ca29adaa5f27/credentials/25c353bd-cb28-4c0d-91c7-997a210cff2c   
+=== apic credentials:update credential-for-testapp1 credential-for-testapp1.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg1 -a testapp1
+credential-for-testapp1   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/474d119a-470a-48cb-8580-5033a8af22c7/0e89b958-eb99-4c8d-80dc-1e38cc78613b/7987ad21-d535-4d96-b210-52f9951f9d9c/credentials/0365d90d-f3ac-490b-b950-fec8563539c1   
+==========================================================
+create the subscriptions for app testapp1 in target catalog
+==========================================================
+=== apic subscriptions:list -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg1 -a testapp1
+=== apic subscriptions:get loopback-product-1-0-0-default -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg1 -a testapp1
+loopback-product-1-0-0-default   loopback-product-1-0-0-default.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/a2880aba-db37-4ea2-b6f1-baa2f813dfde/d029b425-3bcc-473b-a023-ca29adaa5f27/subscriptions/88b1227e-7e98-41f0-8876-30d8169a818f   
+=== target product url for sub loopback-product-1-0-0-default = https://mgmt.v10.apicww.cloud/api/catalogs/test2-cat/test2-cat/products/loopback-product/1.0.0
+=== apic subscriptions:create loopback-product-1-0-0-default.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg1 -a testapp1
+loopback-product-1-0-0-default    [state: enabled]   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/474d119a-470a-48cb-8580-5033a8af22c7/0e89b958-eb99-4c8d-80dc-1e38cc78613b/7987ad21-d535-4d96-b210-52f9951f9d9c/subscriptions/55577212-2685-4634-8926-92aa792ed1e7   
+=== apic subscriptions:get pokemon-product-1-0-0-basic-plan -s mgmt.v10.apicww.cloud -o middleearth -c test-cat --consumer-org corg1 -a testapp1
+pokemon-product-1-0-0-basic-plan   pokemon-product-1-0-0-basic-plan.yaml   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/a2880aba-db37-4ea2-b6f1-baa2f813dfde/d029b425-3bcc-473b-a023-ca29adaa5f27/subscriptions/4151606e-6034-48a3-bc56-b4ce3277c115   
+=== target product url for sub pokemon-product-1-0-0-basic-plan = https://mgmt.v10.apicww.cloud/api/catalogs/test2-cat/test2-cat/products/pokemon-product/1.0.0
+=== apic subscriptions:create pokemon-product-1-0-0-basic-plan.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat --consumer-org corg1 -a testapp1
+pokemon-product-1-0-0-basic-plan    [state: enabled]   https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/474d119a-470a-48cb-8580-5033a8af22c7/0e89b958-eb99-4c8d-80dc-1e38cc78613b/7987ad21-d535-4d96-b210-52f9951f9d9c/subscriptions/0939829c-2a33-4985-a464-8b2d0d7ada63   
+=== apic catalog-settings:update env/catalog-setting-hash-false.yaml -s mgmt.v10.apicww.cloud -o middleearth -c test2-cat
+catalog-setting   https://mgmt.v10.apicww.cloud/api/catalogs/c6312872-9f34-4f18-b626-b5dbddde87aa/474d119a-470a-48cb-8580-5033a8af22c7/settings   

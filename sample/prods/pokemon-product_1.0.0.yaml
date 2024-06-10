@@ -1,0 +1,29 @@
+apis:
+  pokemon:
+    $ref: pokemon_1.0.0.yaml
+gateways:
+- datapower-api-gateway
+info:
+  name: pokemon-product
+  title: Pokemon-Product
+  version: 1.0.0
+plans:
+  basic-plan:
+    title: basic plan
+    apis:
+      pokemon: {}
+    rate-limits:
+      default:
+        value: unlimited
+product: 1.0.0
+visibility:
+  subscribe:
+    enabled: true
+    type: authenticated
+    orgs: []
+    tags: []
+  view:
+    enabled: true
+    type: public
+    orgs: []
+    tags: []

@@ -1,0 +1,147 @@
+swagger: "2.0"
+info:
+  x-ibm-name: pokemon
+  title: pokemon
+  version: 1.0.0
+schemes:
+- https
+basePath: /poke
+consumes:
+- application/json
+produces:
+- application/json
+securityDefinitions:
+  clientIdHeader:
+    in: query
+    name: client_id
+    type: apiKey
+  my-api-key:
+    description: ""
+    in: header
+    name: X-IBM-Client-Secret
+    type: apiKey
+  appId:
+    in: query
+    name: appId
+    type: apiKey
+    x-key-type: client_id
+security:
+- clientIdHeader: []
+- appId: []
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  assembly:
+    catch: []
+    execute:
+    - operation-switch:
+        case:
+        - execute:
+          - invoke:
+              secure-gateway: true
+              target-url: https://pokemons.mybluemix.net/api/pokemons
+              comment:
+              - 'INV17: Invoke policy set to `invoke_1.5.0`, converting invoke to
+                `invoke_1.5.0`. For details, see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#INVOKE_WRAPPER_FOUND'
+              - 'INV18: Set `final-action` parameter on `invoke_1.5.0` For details,
+                see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#INVOKE_FINAL_ACTION'
+              version: 1.5.0
+              final-action: true
+          operations:
+          - path: /pokemons
+            verb: get
+        - execute:
+          - invoke:
+              target-url: https://pokemons.mybluemix.net/api/pokemons/{id}
+              comment:
+              - 'INV17: Invoke policy set to `invoke_1.5.0`, converting invoke to
+                `invoke_1.5.0`. For details, see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#INVOKE_WRAPPER_FOUND'
+              version: 1.5.0
+          - gatewayscript:
+              source: "//APIC: get the payload\nvar apim = require('apim');\nvar json
+                = apim.getvariable('message.body');\nconsole.error('json %s', JSON.stringify(json));\n\n//same:
+                code to inject new attribute \njson.platform = 'SSA';\n\n//APIC: set
+                the payload\napim.setvariable('message.body', json);\n"
+              title: gatewayscript
+              version: 2.0.0
+              comment:
+              - 'GWS04: Found `gatewayscript` policy. Porting might be required. For
+                details, see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#GWS_FOUND'
+              - 'GWS05: Added `require(''apim'')` function to `gatewayscript` policy
+                to conform to the API Gateway specification. For details, see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#GWS_PREPEND_REQUIRE_APIM'
+          operations:
+          - path: /pokemons/{id}
+            verb: get
+        otherwise: []
+        title: operation-switch
+        version: 2.0.0
+        comment:
+        - 'SW01: Found operation-switch_1.0.0 and converted to API Gateway operation-switch_2.0.0'
+  phase: realized
+  gateway: datapower-api-gateway
+  type: rest
+  compatibility:
+    wrapper-policies:
+      allow-chunked-uploads: false
+    comment:
+    - 'API44: Set compatibility toggle `allow-chunked-uploads` to value: `false`.
+      For details, see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#SET_COMPATIBILITY_TOGGLE'
+    - 'API44: Set compatibility toggle `enforce-required-params` to value: `false`.
+      For details, see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#SET_COMPATIBILITY_TOGGLE'
+    - 'API44: Set compatibility toggle `request-headers` to value: `true`. For details,
+      see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#SET_COMPATIBILITY_TOGGLE'
+    - 'API43: Created `compatibility:` section for API-wide toggles set by migration
+      utility. For details, see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#COMPATIBILITY_INFO'
+    enforce-required-params: false
+    request-headers: true
+    migrated-api: true
+  buffering: true
+  activity-log:
+    error-content: payload
+    comment:
+    - 'ACT01: Converted `activity-log` policy to API Gateway `activity-log` policy
+      for conformance. For details, see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#ACTLOG_FOUND'
+    - 'ACT02: Removed `title` property from `activity-log` policy to conform to the
+      API Gateway specification. For details, see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#ACTLOG_REMOVED_TITLE'
+    - 'ACT03: Removed `version` property from `activity-log` policy to conform to
+      the API Gateway specification. For details, see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#ACTLOG_REMOVED_VERSION'
+    enabled: true
+    success-content: activity
+paths:
+  /pokemons:
+    get:
+      responses:
+        "200":
+          description: 200 OK
+  /pokemons/{id}:
+    get:
+      responses:
+        "200":
+          description: 200 OK
+    parameters:
+    - name: id
+      type: string
+      required: true
+      in: path
+definitions: {}
+tags: []
+x-ibm-comment:
+- 'AMU version used to port this API: v10.0.3.0-R4-7918d8722ed80dff79ad214746a67cd59418c6e7-2021-12-15T21:36:45Z'
+- 'API03: Suffix  appended to API `title` and `x-ibm-name`. For details, see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#API_NAME_ADDED_SUFFIX'
+- 'API06: Changed gateway type to `datapower-api-gateway`.'
+- 'API14: Ported v5-compatible policies to work with the API Gateway and updated policy
+  versions.'
+- 'API45: Compatibility toggle: `copy-id-headers-to-message` set to value: `false`,
+  which is the same as the API Gateway default. For details, see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#COMPAT_TOGGLE_MATCHES_APIGW_DEFAULT'
+- 'API45: Compatibility toggle: `return-v5-responses` set to value: `false`, which
+  is the same as the API Gateway default. For details, see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#COMPAT_TOGGLE_MATCHES_APIGW_DEFAULT'
+- 'API61: Set buffering property to true. For details, see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#SET_BUFFERING'
+- 'API62: A query based security definition `clientIdHeader` was present. A new security
+  definition `appId` was created to match implicit v5 behavior. For details, see:
+  https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#CREATE_SECURITY_DEFINITION'
+- 'API63: A security set was created with security definition references `appId` to
+  match implicit v5 behavior. For details, see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#CREATE_SECURITY_SET'
+- 'API24: Removed redundant `parse` policy from the beginning of the assembly. For
+  details, see: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=cadag-messages-generated-during-conversion-apis-datapower-api-gateway#REMOVED_REDUNDANT_FRONT_PARSE'

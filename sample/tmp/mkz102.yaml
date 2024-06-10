@@ -1,0 +1,36 @@
+type: member
+api_version: 2.0.0
+id: f4041209-4eec-455b-8cec-85e7ebd0aa6f
+name: mkz102
+title: mkz102
+state: enabled
+scope: consumer_org
+user:
+  id: 0918f186-bfb5-4c65-869c-d2189ff947b0
+  url: >-
+    https://cm.v10.apicww.cloud/api/user-registries/c6312872-9f34-4f18-b626-b5dbddde87aa/cd6af9ce-83c4-4477-8d77-b093ba302493/users/0918f186-bfb5-4c65-869c-d2189ff947b0
+  name: mkz102
+  type: user
+  email: mkz102@gmail.com
+  state: enabled
+  title: mkz102
+  org_url: 'https://cm.v10.apicww.cloud/api/orgs/c6312872-9f34-4f18-b626-b5dbddde87aa'
+  username: mkz102
+  last_name: Z4
+  first_name: kai4
+  api_version: 2.0.0
+  identity_provider: test-cat-idp
+  user_registry_url: >-
+    https://cm.v10.apicww.cloud/api/user-registries/c6312872-9f34-4f18-b626-b5dbddde87aa/cd6af9ce-83c4-4477-8d77-b093ba302493
+role_urls:
+  - >-
+    https://cm.v10.apicww.cloud/api/consumer-orgs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/19536a4b-e255-449f-ac0d-5b36b426608e/roles/c003cf5d-2e17-45a2-9b9b-8bdcf7556aed
+created_at: '2022-01-18T18:12:15.000Z'
+updated_at: '2022-01-18T18:12:15.000Z'
+org_url: 'https://cm.v10.apicww.cloud/api/orgs/c6312872-9f34-4f18-b626-b5dbddde87aa'
+catalog_url: >-
+  https://cm.v10.apicww.cloud/api/catalogs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4
+consumer_org_url: >-
+  https://cm.v10.apicww.cloud/api/consumer-orgs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/19536a4b-e255-449f-ac0d-5b36b426608e
+url: >-
+  https://cm.v10.apicww.cloud/api/consumer-orgs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/19536a4b-e255-449f-ac0d-5b36b426608e/members/f4041209-4eec-455b-8cec-85e7ebd0aa6f

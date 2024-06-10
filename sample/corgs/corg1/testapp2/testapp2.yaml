@@ -1,0 +1,7 @@
+type: app
+api_version: 2.0.0
+id: 87278595-bf4a-4672-aa0a-39101c6a09ac
+name: testapp2
+title: testapp2
+state: enabled
+lifecycle_state: production

@@ -1,0 +1,11 @@
+type: user
+api_version: 2.0.0
+name: mkz104
+title: mkz104
+state: enabled
+identity_provider: test-cat-idp
+username: mkz104
+password: 7iron-hide
+email: mkz104@gmail.com
+first_name: Kai
+last_name: Zhang

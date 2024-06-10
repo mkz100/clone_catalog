@@ -1,0 +1,22 @@
+type: subscription
+api_version: 2.0.0
+id: ec31bb62-34de-421b-b74d-b9708520f11b
+name: echo-product-1-0-0-default
+title: echo-product 1.0.0 default
+state: enabled
+product_url: >-
+  https://mgmt.v10.apicww.cloud/api/catalogs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/products/e486d262-ec11-467e-bae4-e39ff1d50a87
+plan: default
+plan_title: Default Plan
+task_urls: []
+created_at: '2022-01-20T17:56:54.000Z'
+updated_at: '2022-01-20T17:56:54.000Z'
+org_url: 'https://mgmt.v10.apicww.cloud/api/orgs/c6312872-9f34-4f18-b626-b5dbddde87aa'
+catalog_url: >-
+  https://mgmt.v10.apicww.cloud/api/catalogs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4
+consumer_org_url: >-
+  https://mgmt.v10.apicww.cloud/api/consumer-orgs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/224ce4f4-d131-4aff-8411-7742f47c2923
+app_url: >-
+  https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/224ce4f4-d131-4aff-8411-7742f47c2923/9299b9fb-c5e5-4361-9c8f-f9266e6870b5
+url: >-
+  https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/224ce4f4-d131-4aff-8411-7742f47c2923/9299b9fb-c5e5-4361-9c8f-f9266e6870b5/subscriptions/ec31bb62-34de-421b-b74d-b9708520f11b

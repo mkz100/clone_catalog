@@ -1,0 +1,12 @@
+type: catalog
+api_version: 2.0.0
+id: 0589cb33-962b-4f04-bc60-46f6b6d589b3
+name: test2-cat
+title: test2-cat
+owner_url: >-
+  https://mgmt.v10.apicww.cloud/api/user-registries/14e1d75f-7985-4588-a0f2-4cdbeaf796fe/64d0cff1-bf75-414c-9379-bada1e0aeab0/users/b40d9da4-e912-4841-add3-117a0bf544ec
+created_at: '2022-01-20T02:33:27.000Z'
+updated_at: '2022-01-20T02:33:27.000Z'
+org_url: 'https://mgmt.v10.apicww.cloud/api/orgs/c6312872-9f34-4f18-b626-b5dbddde87aa'
+url: >-
+  https://mgmt.v10.apicww.cloud/api/catalogs/c6312872-9f34-4f18-b626-b5dbddde87aa/0589cb33-962b-4f04-bc60-46f6b6d589b3

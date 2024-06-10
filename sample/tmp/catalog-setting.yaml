@@ -1,0 +1,36 @@
+type: catalog_setting
+api_version: 2.0.0
+name: catalog-setting
+user_registry_default_url: >-
+  https://mgmt.v10.apicww.cloud/api/catalogs/c6312872-9f34-4f18-b626-b5dbddde87aa/0589cb33-962b-4f04-bc60-46f6b6d589b3/configured-catalog-user-registries/dd4a800f-3b05-42c8-a9b7-4e0416618d84
+production_mode: false
+portal:
+  type: none
+product_lifecycle_approvals: []
+task_self_approval: false
+application_lifecycle:
+  enabled: false
+consumer_self_service_onboarding: true
+consumer_self_service_onboarding_approval: false
+consumer_org_invitations_enabled: true
+consumer_org_invitation_roles:
+  - administrator
+  - developer
+  - viewer
+invitation_ttl: 172800
+vanity_api_endpoint:
+  enabled: false
+  vanity_api_base_endpoints: []
+spaces_enabled: true
+custom_notification_templates_enabled: false
+email_sender:
+  custom: false
+hash_client_secret: true
+default_catalog: false
+created_at: '2022-01-20T02:33:28.000Z'
+updated_at: '2022-01-21T02:27:21.000Z'
+org_url: 'https://mgmt.v10.apicww.cloud/api/orgs/c6312872-9f34-4f18-b626-b5dbddde87aa'
+catalog_url: >-
+  https://mgmt.v10.apicww.cloud/api/catalogs/c6312872-9f34-4f18-b626-b5dbddde87aa/0589cb33-962b-4f04-bc60-46f6b6d589b3
+url: >-
+  https://mgmt.v10.apicww.cloud/api/catalogs/c6312872-9f34-4f18-b626-b5dbddde87aa/0589cb33-962b-4f04-bc60-46f6b6d589b3/settings

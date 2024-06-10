@@ -1,0 +1,2 @@
+loopback-product:1.0.0    [state: published]   https://mgmt.v10.apicww.cloud/api/spaces/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/7e71442e-c016-44b7-bf73-a0e1a4646f54/products/313bd800-7877-438a-91cd-c57d6f5f5ce0   
+pokemon-product:1.0.0     [state: published]   https://mgmt.v10.apicww.cloud/api/spaces/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/7e71442e-c016-44b7-bf73-a0e1a4646f54/products/2327d737-4818-4a5d-8a0f-4a2d5b2a86ec   

@@ -1,0 +1,22 @@
+type: app
+api_version: 2.0.0
+id: d029b425-3bcc-473b-a023-ca29adaa5f27
+name: testapp1
+title: testapp1
+state: enabled
+lifecycle_state: production
+app_credential_urls:
+  - >-
+    https://cm.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/a2880aba-db37-4ea2-b6f1-baa2f813dfde/d029b425-3bcc-473b-a023-ca29adaa5f27/credentials/25c353bd-cb28-4c0d-91c7-997a210cff2c
+  - >-
+    https://cm.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/a2880aba-db37-4ea2-b6f1-baa2f813dfde/d029b425-3bcc-473b-a023-ca29adaa5f27/credentials/25c353bd-cb28-4c0d-91c7-997a210cff2c
+redirect_endpoints: []
+created_at: '2022-01-18T07:42:43.000Z'
+updated_at: '2022-01-18T07:42:43.000Z'
+org_url: 'https://cm.v10.apicww.cloud/api/orgs/c6312872-9f34-4f18-b626-b5dbddde87aa'
+catalog_url: >-
+  https://cm.v10.apicww.cloud/api/catalogs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4
+consumer_org_url: >-
+  https://cm.v10.apicww.cloud/api/consumer-orgs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/a2880aba-db37-4ea2-b6f1-baa2f813dfde
+url: >-
+  https://cm.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/a2880aba-db37-4ea2-b6f1-baa2f813dfde/d029b425-3bcc-473b-a023-ca29adaa5f27

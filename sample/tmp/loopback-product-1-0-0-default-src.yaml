@@ -1,0 +1,22 @@
+type: subscription
+api_version: 2.0.0
+id: 88b1227e-7e98-41f0-8876-30d8169a818f
+name: loopback-product-1-0-0-default
+title: loopback-product 1.0.0 default
+state: enabled
+product_url: >-
+  https://mgmt.v10.apicww.cloud/api/catalogs/test2-cat/test2-cat/products/loopback-product/1.0.0
+plan: default
+plan_title: Default Plan
+task_urls: []
+created_at: '2022-01-20T18:54:56.000Z'
+updated_at: '2022-01-20T18:54:56.000Z'
+org_url: 'https://mgmt.v10.apicww.cloud/api/orgs/c6312872-9f34-4f18-b626-b5dbddde87aa'
+catalog_url: >-
+  https://mgmt.v10.apicww.cloud/api/catalogs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4
+consumer_org_url: >-
+  https://mgmt.v10.apicww.cloud/api/consumer-orgs/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/a2880aba-db37-4ea2-b6f1-baa2f813dfde
+app_url: >-
+  https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/a2880aba-db37-4ea2-b6f1-baa2f813dfde/d029b425-3bcc-473b-a023-ca29adaa5f27
+url: >-
+  https://mgmt.v10.apicww.cloud/api/apps/c6312872-9f34-4f18-b626-b5dbddde87aa/d1330cd6-2ef9-4462-8dca-c2a0384528e4/a2880aba-db37-4ea2-b6f1-baa2f813dfde/d029b425-3bcc-473b-a023-ca29adaa5f27/subscriptions/88b1227e-7e98-41f0-8876-30d8169a818f
