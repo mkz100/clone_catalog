@@ -1,4 +1,4 @@
-# Clone a new catalog from an existing one
+# Clone a new catalog from an existing one in IBM API Connect
 
 The script [clone_catalog.sh](clone_catalog.sh) will clone all products and APIs and their subscriptions including cOrgs/Apps along with their credentials in a given `source catalog space` to the specified `target catalog space`.
 
